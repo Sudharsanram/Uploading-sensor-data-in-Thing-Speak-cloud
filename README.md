@@ -1,4 +1,4 @@
-# Uploading temperature sensor data in Thing Speak cloud
+# EXP-3 Uploading temperature sensor data in Thing Speak cloud
 
 #### NAME: SUDHARSAN RAM M
 #### REG NO: 212222110048
