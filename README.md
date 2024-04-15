@@ -1,5 +1,8 @@
 # Uploading temperature sensor data in Thing Speak cloud
 
+#### NAME: SUDHARSAN RAM M
+#### REG NO: 212222110048
+
 # AIM:
 To monitor the temperature sensor data in the Thing speak using an ESP32 controller.
 
@@ -71,10 +74,70 @@ Automatically act on your data and communicate using third-party services like T
 
 
 # PROGRAM:
+```
+#include"ThingSpeak.h"
+#include <WiFi.h>
+#include "DHT.h"
+
+char ssid[]="Iqoo Neo 6";
+char pass[]="Password";
+
+const int t=25;
+WiFiClient client;
+DHT dht(25, DHT11);
+
+unsigned long myChannelField = 2495359;
+const int ChannelField1 = 1 ; 
+const int ChannelField2 = 2 ;
+const char *myWriteAPIKey="NFR58J3FBHC84088";
+
+void setup()
+{
+  Serial.begin(115200);
+  pinMode (t,OUTPUT);
+  WiFi.mode(WIFI_STA);
+  ThingSpeak.begin(client);
+  dht.begin();
+  delay(1000);
+}
+
+void loop()
+{
+  if(WiFi.status()!=WL_CONNECTED)
+  {
+    Serial.print("Attempting to connet to SSID: "); 
+    Serial.println(ssid);
+    while(WiFi.status() != WL_CONNECTED)
+    {
+      WiFi.begin(ssid, pass);
+      Serial.print(".");
+      delay(5000);
+    }
+    Serial.println("\nConnected");
+  }
+  float temperature = dht.readTemperature();
+  float humidity = dht.readHumidity();
+  delay(1000);
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.println(" *C");
+  ThingSpeak.writeField(myChannelField, ChannelField1, temperature, myWriteAPIKey);
+  Serial.print("Humidity: ");
+  Serial.print(humidity);
+  Serial.println(" g.m-3");
+  ThingSpeak.writeField(myChannelField, ChannelField2, humidity, myWriteAPIKey);
+  delay(1000);
+}
+
+```
 
 # CIRCUIT DIAGRAM:
 
+
+<img src="![image](https://github.com/Sudharsanram/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393980/d8a17f85-5773-4835-8802-33c42d668e14)" alt="alt text" width="500" height="300" class="center"/>
 # OUTPUT:
+
+  <img src="![Screenshot 2024-04-10 120525](https://github.com/Sudharsanram/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393980/396ecea5-badf-4636-b165-8c896d25c561)" alt="alt text" width="500" height="300" class="center"/>
 
 # RESULT:
 
