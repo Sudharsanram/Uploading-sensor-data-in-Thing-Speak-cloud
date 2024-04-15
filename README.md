@@ -134,11 +134,11 @@ void loop()
 # CIRCUIT DIAGRAM:
 
 
-<img src="(https://github.com/Sudharsanram/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393980/d8a17f85-5773-4835-8802-33c42d668e14)" width="500" height="300" class="center"/>
+<img src="https://github.com/Sudharsanram/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393980/d8a17f85-5773-4835-8802-33c42d668e14" width="500" height="300" class="center"/>
 
 # OUTPUT:
 
-  <img src="(https://github.com/Sudharsanram/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393980/396ecea5-badf-4636-b165-8c896d25c561)" width="500" height="300" class="center"/>
+  <img src="https://github.com/Sudharsanram/Uploading-sensor-data-in-Thing-Speak-cloud/assets/119393980/396ecea5-badf-4636-b165-8c896d25c561" width="500" height="300" class="center"/>
 
 # RESULT:
 
